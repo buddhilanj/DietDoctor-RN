@@ -6,35 +6,16 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  useColorScheme,
-} from 'react-native';
+import AppContainer from '@app/navigation';
+import store from '@app/store';
+import { Provider } from 'react-redux';
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? 'black' : 'white',
-  };
-
   return (
-    <SafeAreaView style={[backgroundStyle, styles.container]}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-    </SafeAreaView>
+    <Provider store={store}>
+      <AppContainer/>
+    </Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container:{
-    flex:1,
-  }
-});
 
 export default App;
