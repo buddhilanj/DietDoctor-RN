@@ -8,7 +8,8 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "precommit": "lint-staged"
+    "prepare": "husky install",
+    "postinstall": "husky install"
   },
   "husky": {
     "hooks": {
@@ -51,6 +52,7 @@
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "@typescript-eslint/parser": "^6.4.0",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^29.2.1",
     "babel-plugin-module-resolver": "^5.0.0",
     "eslint": "^8.47.0",
