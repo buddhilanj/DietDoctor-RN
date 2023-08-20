@@ -22,7 +22,7 @@ function App(): JSX.Element {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
+    <SafeAreaView style={[backgroundStyle, styles.container]}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
         backgroundColor={backgroundStyle.backgroundColor}
@@ -34,7 +34,6 @@ function App(): JSX.Element {
 const styles = StyleSheet.create({
   container:{
     flex:1,
-    backgroundColor:'red'
   }
 });
 
