@@ -1,7 +1,15 @@
 module.exports = {
-  parser: '@babel/eslint-parser',
+  parser: '@typescript-eslint/parser',
   extends: ['airbnb', 'prettier'],
-  plugins: ['react', 'react-hooks', 'jsx-a11y', 'import', 'prettier'],
+  plugins: [
+    'react',
+    'react-hooks',
+    'jsx-a11y',
+    'import',
+    'prettier',
+    '@typescript-eslint',
+    'import',
+  ],
   rules: {
     'prettier/prettier': ['error'],
     'react-hooks/rules-of-hooks': 'error',
@@ -13,5 +21,10 @@ module.exports = {
       },
     ],
     // Add other project-specific rules as needed
+  },
+  settings: {
+    'import/resolver': {
+      typescript: {},
+    },
   },
 };
