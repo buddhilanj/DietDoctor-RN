@@ -20,11 +20,15 @@ module.exports = {
         extensions: ['.jsx', '.tsx'],
       },
     ],
+    'react/no-unstable-nested-components': 'off',
     // Add other project-specific rules as needed
   },
   settings: {
     'import/resolver': {
-      typescript: {},
+      typescript: {
+        paths: ['./src/*'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     },
   },
 };
