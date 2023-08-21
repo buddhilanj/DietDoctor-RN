@@ -10,6 +10,12 @@ const API = axios.create({
   headers: {'Content-Type': 'application/json'},
 });
 
+const AUTH = axios.create({
+  baseURL: `${baseURL}`,
+  timeout: 4000,
+  headers: {'Content-Type': 'application/json'},
+});
+
 API.interceptors.response.use(responseProcessor, errorProcessor);
 
-export default {API};
+export default {API, AUTH};
